@@ -1,0 +1,59 @@
+<nav class="navbar fixed-top navbar-expand-md navbar-light white double-nav scrolling-navbar">
+    <!-- SideNav slide-out button -->
+    <div class="float-left">
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i><span class="sr-only" aria-hidden="true"></span></a>
+    </div>
+    <!-- Navbar links-->
+    <div class="mr-auto pl-2">
+      <span class="d-none d-md-inline-block">
+  
+      <!--Angular Mobile-->
+          <a id="navbar-category-pricing-jquery" class="btn btn-info btn-sm my-0" href="/articles" role="button">
+            <span class="d-none d-lg-inline-block mr-1">Makaleler</span>
+            <i class="fas fa-gem"></i>
+          </a>
+          <a id="navbar-category-tutorial-jquery" class="btn btn-info btn-sm my-0" href="/about" role="button">
+            <span class="d-none d-lg-inline-block mr-1">Hakkımızda</span>
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+          <a id="navbar-category-bundle-vue" class="btn btn-elegant btn-sm my-0" href="/" role="button">
+            <span class="d-none d-lg-inline-block mr-1">Sprinkai</span>
+            <i class="fas fa-gift"></i>
+          </a>
+            </span>
+    </div>
+  
+    <!--Navigation icons
+    <span id="dpl-navbar-right-buttons">
+      <ul id="dpl-navbar-right-buttons-tmp" class="nav navbar-nav nav-flex-icons ml-auto">
+        <li class="nav-item d-none d-xl-inline-block"  id="navbar-static-contact" alt="Contact us">
+          <a href="/general/contact/" class="nav-link waves-effect">
+            <i class="fas fa-envelope"></i><span class="sr-only"></span>
+          </a>
+        </li>
+        <li class="nav-item d-none d-xl-inline-block"  alt="Support" id="navbar-static-support">
+          <a href="/services/" class="nav-link waves-effect">
+            <i class="fas fa-question-circle"></i><span class="d-none d-xl-inline-block ml-1"></span>
+          </a>
+        </li>-->
+        {% if session["logged_in"] %}
+          
+          <a id="navbar-tools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-wrench"></i><img src="/uploads/{{ session['username'] }}.jpg" alt="{{ session['username'] }}" width="30" height="30"></a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbar-tools">
+            <a class="dropdown-item" href="/settings">Ayarlar</a>
+            <a class="dropdown-item" href="/changepassword">Parola Değiştir</a>
+            <a class="dropdown-item" href="/news/frontend/"></a>
+            <a class="dropdown-item" href="/updates"><span class="badge badge-danger rounded">Güncellemeler</span></a>
+          </div>
+        
+        
+          <a href="/dashboard" id="navbar-static-dashboard" alt="Dashboard" class="text-info align-self-center ml-2 auth-modal-toggle" data-auth-modal-tab="dashboard">Kontrol Paneli</a>
+          <a href="/logout" id="navbar-static-logout" alt="Log Out" class="text-info align-self-center ml-2 auth-modal-toggle" data-auth-modal-tab="log-out">Çıkış Yap</a>
+        {% else %}
+          <a href="/register" id="navbar-static-register" alt="Register" class="text-info align-self-center ml-2 auth-modal-toggle" data-auth-modal-tab="register">Kayıt Ol</a>
+          <a href="/login" id="navbar-static-login" alt="Log In" class="text-info align-self-center ml-2 auth-modal-toggle" data-auth-modal-tab="log-in">Giriş Yap</a> 
+        {% endif %}
+      </ul>
+    </span>
+</nav>

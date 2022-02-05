@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block title %}
+Giriş Yap
+{% endblock %}
+
+{% block body %}
+
+<h3>Giriş Yap</h3>
+<hr>
+
+{% from "includes/formhelpers.html" import render_field %}
+
+<form method = "POST">
+    {{ render_field(form.username) }}
+    {{ render_field(form.password) }}
+    <button type="submit" class="btn btn-info">Giriş Yap</button>
+    <a href = "/forgotpassworduser"><small>Şifreni mi unuttun?</small></a>
+</form>
+
+
+{% endblock body %}

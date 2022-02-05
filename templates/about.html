@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+
+{% block title %}
+Hakımızda
+{% endblock %}
+
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h4>Web Siteme Hoşgeldiniz...</h4>
+</div>
+
+<ul>
+    {% for number in numbers %}
+        {% if number % 2 == 0 %}
+            <li>{{number}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock body %}
